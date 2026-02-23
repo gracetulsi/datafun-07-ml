@@ -17,7 +17,8 @@ This project explores introductory machine learning concepts including time seri
 
 ## Dataset
 
-*To be determined.*
+- **NYC January Average High Temperatures (1895–2018):** Historical time series data from NOAA used in textbook example 10.16 for simple linear regression. Located in `notebooks/textbook/ave_hi_nyc_jan_1895-2018.csv`.
+- **Students Performance in Exams:** 1,000-record dataset from Kaggle used in Module 6 EDA project, carried forward for predictive analysis. Located in `data/raw/StudentsPerformance.csv`.
 
 ## Initial Setup
 
@@ -64,7 +65,23 @@ uvx pre-commit run --all-files
 9. Selected the project `.venv` interpreter using the Command Palette (`Ctrl+Shift+P` > `Python: Select Interpreter` > chose the Workspace `.venv`).
 10. Ran `Developer: Reload Window` from the Command Palette (`Ctrl+Shift+P`) to ensure VS Code fully recognized the new environment.
 
+## Adding Textbook Examples
+
+To prepare for the Module 7 project and CC7.2, I added Chapter 10 textbook examples to the project:
+
+1. Cloned the textbook author's repo and Dr. Case's [IntroToPython](https://github.com/denisecase/IntroToPython) repo to my local machine.
+2. Copied the relevant Chapter 10 example files (notebooks, Python modules, and CSV data files) into `notebooks/textbook/`.
+3. Verified the examples run correctly in VS Code using the project's `.venv` kernel.
+4. Key example: **10.16** demonstrates time series analysis and simple linear regression using NYC January temperature data — this is the foundation for the Module 7 project.
+
+```shell
+git add -A
+git commit -m "Add Chapter 10 textbook notebooks and start gracetulsi notebook"
+git push
+```
+
 ## Repeatable Workflow
+
 ```shell
 git pull
 uv sync --extra dev --extra docs --upgrade
@@ -73,11 +90,13 @@ uv sync --extra dev --extra docs --upgrade
 In this project, **notebooks are the primary analysis artifact**; but scripts can be used to mirror the core logic.
 
 Run the example Python source files as modules (preferred):
+
 ```shell
 uv run python -m datafun_04_notebooks.app_case
 ```
 
 Run Python checks and tests (as available):
+
 ```shell
 uv run ruff format .
 uv run ruff check . --fix
@@ -85,6 +104,7 @@ uv run pytest --cov=src --cov-report=term-missing
 ```
 
 Build and serve docs (hit **CTRL+c** in the VS Code terminal to quit serving):
+
 ```shell
 uv run mkdocs build --strict
 uv run mkdocs serve
@@ -93,6 +113,7 @@ uv run mkdocs serve
 While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
 
 Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
+
 ```shell
 git add -A
 git commit -m "update"

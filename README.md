@@ -67,16 +67,19 @@ uvx pre-commit run --all-files
 
 ## Adding Textbook Examples
 
-To prepare for the Module 7 project and CC7.2, I added Chapter 10 textbook examples to the project:
+To prepare for the Module 7 project and CC7.2/CC7.3, I added Chapter 10 and Chapter 15 textbook examples to the project:
 
 1. Cloned the textbook author's repo and Dr. Case's [IntroToPython](https://github.com/denisecase/IntroToPython) repo to my local machine.
-2. Copied the relevant Chapter 10 example files (notebooks, Python modules, and CSV data files) into `notebooks/textbook/`.
+2. Copied the relevant Chapter 10 and Chapter 15 example files (notebooks, Python modules, and CSV data files) into `notebooks/textbook/`.
 3. Verified the examples run correctly in VS Code using the project's `.venv` kernel.
-4. Key example: **10.16** demonstrates time series analysis and simple linear regression using NYC January temperature data — this is the foundation for the Module 7 project.
+4. Key examples:
+   - Chapter 10: `10_16.ipynb` (NYC January temperatures + simple linear regression)
+   - Chapter 15: `ch15/snippets_ipynb/15_04.ipynb` (train/test split + scikit-learn `LinearRegression`)
+5. Project notebook (deliverable): `notebooks/gracetulsi_ml.ipynb`
 
 ```shell
 git add -A
-git commit -m "Add Chapter 10 textbook notebooks and start gracetulsi notebook"
+git commit -m "Descriptive Update Message"
 git push
 ```
 

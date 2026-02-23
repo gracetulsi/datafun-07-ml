@@ -65,20 +65,36 @@ uvx pre-commit run --all-files
 10. Ran `Developer: Reload Window` from the Command Palette (`Ctrl+Shift+P`) to ensure VS Code fully recognized the new environment.
 
 ## Repeatable Workflow
-
 ```shell
 git pull
 uv sync --extra dev --extra docs --upgrade
 ```
 
-Run notebooks, make changes, then:
+In this project, **notebooks are the primary analysis artifact**; but scripts can be used to mirror the core logic.
 
+Run the example Python source files as modules (preferred):
 ```shell
-git add .
-git commit -m "Descriptive message"
-git push -u origin main
+uv run python -m datafun_04_notebooks.app_case
 ```
 
-## Resources
+Run Python checks and tests (as available):
+```shell
+uv run ruff format .
+uv run ruff check . --fix
+uv run pytest --cov=src --cov-report=term-missing
+```
 
-- [Pro-Analytics-02](https://gracetulsi.github.io/pro-analytics-02/) - guide to professional Python
+Build and serve docs (hit **CTRL+c** in the VS Code terminal to quit serving):
+```shell
+uv run mkdocs build --strict
+uv run mkdocs serve
+```
+
+While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
+
+Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
+```shell
+git add -A
+git commit -m "update"
+git push -u origin main
+```

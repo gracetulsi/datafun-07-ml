@@ -107,6 +107,7 @@ exclude = [
     "build",
     "dist",
     "site",
+    "notebooks/textbook",
 ]
 line-length = 88 # WHY: PEP 8 standard line length, wrap when possible.
 preview = false # WHY: Stable features only; avoid preview features.

@@ -17,8 +17,17 @@ This project explores introductory machine learning concepts including time seri
 
 ## Dataset
 
-- **NYC January Average High Temperatures (1895–2018):** Historical time series data from NOAA used in textbook example 10.16 for simple linear regression. Located in `notebooks/textbook/ave_hi_nyc_jan_1895-2018.csv`.
-- **Students Performance in Exams:** 1,000-record dataset from Kaggle used in Module 6 EDA project, carried forward for predictive analysis. Located in `data/raw/StudentsPerformance.csv`.
+- **NYC January Average High Temperatures (1895–2018):** Historical time series data from NOAA used in textbook example 10.16 for simple linear regression. Located in `data/raw/ave_hi_nyc_jan_1895-2018.csv`.
+
+## Module 7 Project
+
+**Project deliverable notebook:** `notebooks/gracetulsi_ml.ipynb`
+
+This notebook contains:
+- **Part 1:** Chart a straight line (Fahrenheit → Celsius)
+- **Part 2:** NYC January temperature prediction using SciPy `linregress`
+- **Part 3:** NYC January temperature prediction using scikit-learn `LinearRegression` with train/test split
+- **Part 4:** Insights comparing SciPy vs scikit-learn and why predictions may differ
 
 ## Initial Setup
 
@@ -72,10 +81,12 @@ To prepare for the Module 7 project and CC7.2/CC7.3, I added Chapter 10 and Chap
 1. Cloned the textbook author's repo and Dr. Case's [IntroToPython](https://github.com/denisecase/IntroToPython) repo to my local machine.
 2. Copied the relevant Chapter 10 and Chapter 15 example files (notebooks, Python modules, and CSV data files) into `notebooks/textbook/`.
 3. Verified the examples run correctly in VS Code using the project's `.venv` kernel.
-4. Key examples:
+4. Key example notebooks (used for CC7.2/CC7.3):
    - Chapter 10: `10_16.ipynb` (NYC January temperatures + simple linear regression)
    - Chapter 15: `ch15/snippets_ipynb/15_04.ipynb` (train/test split + scikit-learn `LinearRegression`)
-5. Project notebook (deliverable): `notebooks/gracetulsi_ml.ipynb`
+
+5. Module 7 project deliverable notebook:
+   - `notebooks/gracetulsi_ml.ipynb`
 
 ```shell
 git add -A
@@ -92,11 +103,11 @@ uv sync --extra dev --extra docs --upgrade
 
 In this project, **notebooks are the primary analysis artifact**; but scripts can be used to mirror the core logic.
 
-Run the example Python source files as modules (preferred):
+Run the project notebook (deliverable):
 
-```shell
-uv run python -m datafun_04_notebooks.app_case
-```
+- Open `notebooks/gracetulsi_ml.ipynb` in VS Code
+- Select the project `.venv` kernel
+- Run all cells (top to bottom)
 
 Run Python checks and tests (as available):
 

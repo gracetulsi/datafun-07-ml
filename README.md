@@ -9,7 +9,7 @@
 
 ## Overview
 
-This project explores introductory machine learning concepts including time series data, simple linear regression, and predictive analytics using Python, Jupyter notebooks, pandas, and scikit-learn. The analysis is part of Module 7 for the Data Analytics Fundamentals course (44-608).
+This project explores introductory machine learning concepts including time series data, simple linear regression, and predictive analytics using Python, Jupyter notebooks, pandas, and scikit-learn.
 
 **Author:** [Grace Tulsi](https://github.com/gracetulsi)
 
@@ -28,6 +28,15 @@ This notebook contains:
 - **Part 2:** NYC January temperature prediction using SciPy `linregress`
 - **Part 3:** NYC January temperature prediction using scikit-learn `LinearRegression` with train/test split
 - **Part 4:** Insights comparing SciPy vs scikit-learn and why predictions may differ
+
+## Project Highlight (Chart + Final Observations)
+
+![NYC January Regression + 2024 Predictions](docs/images/project_highlight.png)
+
+**Final observations:**
+- The NYC January average high temperatures show a gradual long-term trend that can be approximated with a simple linear model.
+- SciPy (`linregress`) and scikit-learn (`LinearRegression`) produce similar 2024 predictions; small differences are expected because the scikit-learn model uses a train/test split.
+- This model uses only one feature (year), so it’s best interpreted as a baseline trend model rather than a high-accuracy forecast.
 
 ## Initial Setup
 
